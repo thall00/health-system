@@ -1,0 +1,10 @@
+<div id="main-container" class="container-fluid">
+  <div class="row">
+    
+    <div id="content" class="col-xs-12">
+      <%= link_to 'Back', patients_path %>
+      <h2><%= @appointment.appointment_date.to_date %> / <%= @appointment.patient.name %></h2>
+      
+    </div>
+  </div>
+</div>

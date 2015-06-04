@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  appointment: MyString
+  pulse: 1.5
+  bp_systolic: 1.5
+  bp_diastolic: 1.5
+  height: 1.5
+  weight: 1.5
+  oxygen_level: 1.5
+
+two:
+  appointment: MyString
+  pulse: 1.5
+  bp_systolic: 1.5
+  bp_diastolic: 1.5
+  height: 1.5
+  weight: 1.5
+  oxygen_level: 1.5

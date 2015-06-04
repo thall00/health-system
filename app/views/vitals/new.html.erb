@@ -1,0 +1,54 @@
+<div id="main-container" class="container-fluid">
+  <div class="row">
+    
+    <div id="content" class="col-xs-12">
+      <h2>Record new vitals for <%= @patient.name %> </h2>
+      <%= form_for(@vital) do |f| %>
+        <% if @vital.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@vital.errors.count, "error") %> prohibited this vital from being saved:</h2>
+
+            <ul>
+            <% @vital.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="field">
+          <%= f.label :pulse %><br>
+          <%= f.text_field :pulse %>
+        </div>
+        <div class="field">
+          <%= f.label "Systolic Blood Pressure" %><br>
+          <%= f.text_field :bp_systolic %>
+        </div>
+        <div class="field">
+          <%= f.label "Diastolic Blood Pressure" %><br>
+          <%= f.text_field :bp_diastolic %>
+        </div>
+        <div class="field">
+          <%= f.label :height %><br>
+          <%= f.text_field :height %>
+        </div>
+        <div class="field">
+          <%= f.label :weight %><br>
+          <%= f.text_field :weight %>
+        </div>
+        <div class="field">
+          <%= f.label :oxygen_level %><br>
+          <%= f.text_field :oxygen_level %>
+        </div>
+        <div class="field">
+          <%= f.hidden_field :appointment, :value => @appointment.id %>
+        </div>
+        
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>

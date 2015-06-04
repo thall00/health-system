@@ -1,0 +1,31 @@
+<div id="main-container" class="container-fluid">
+  <div class="row">
+    
+    <div id="content" class="col-xs-12">
+      <!--  main content -->
+      <h2>Appointments</h2>
+       
+      
+
+      <table class="table table-hover table-condensed">
+        <tr>
+          <th>Date/Time</th>
+          <th>Patient</th>
+          <!-- Add this record after implementing authentication for doctors -->
+          <!-- <th>Doctor</th> -->
+          
+        </tr>
+        <% @appointments.each do |appointment| %>
+          <tr>
+            <td><%= appointment.appointment_date %></td>
+            <td><%= appointment.patient.name %></td>
+            <!-- <td><#%= appointment.doctor.name %></td> -->
+
+          </tr>
+        <% end %>
+      </table>
+
+    </div>
+  </div>
+</div>
+

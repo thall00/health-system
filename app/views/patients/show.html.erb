@@ -1,0 +1,39 @@
+<div id="main-container" class="container-fluid">
+  <div class="row">
+    <div id="content">
+      <div class="col-xs-12">
+        <%= link_to '<-Back to Patients', patients_path %>
+        <h2><%= @patient.name %></h2>
+        <br>
+        <%= link_to 'Add Vitals', new_vital_path(:id => @patient.id) %>
+
+      </div>
+      <div class="col-xs-6">
+        <h3 style="color: red; text-align: center">Height</h3>
+        <%= line_chart(@height_hash, colors: ["red"]) %>
+        <!-- <#%= line_chart({20.day.ago => 5, 1368174456 => 4, "2013-05-07 00:00:00 UTC" => 7}) %> -->
+
+          <h3 style="color: purple; text-align: center">Weight</h3>
+          <%= line_chart(@weight_hash, colors: ["purple"]) %>
+      
+        <h3 style="color: green; text-align: center">Pulse</h3>
+        <%= line_chart(@pulse_hash, colors: ["green"]) %>
+        <br>
+        
+
+      </div>
+
+      <div class="col-xs-6">
+        <h3 style="color: black; text-align: center">Blood Pressure</h3>
+        <%= line_chart [
+          {name: "Systolic", data: @bp_systolic_hash},
+          {name: "Diastolic", data: @bp_diastolic_hash}
+          ] %>
+
+        <h3 style="color: blue; text-align: center">Oxygen Level</h3>
+        <%= line_chart(@oxygen_level_hash) %>
+      </div>
+     </div>
+
+  </div>
+</div>

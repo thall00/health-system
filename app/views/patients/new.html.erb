@@ -1,0 +1,30 @@
+
+<div id="content" class="col-xs-12">
+  <%= link_to '<-Back to Patients', patients_path %>
+  <br>
+  <h2>Add a Patient</h2>
+  <%= form_for(@patient) do |f| %>
+    <% if @patient.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@patient.errors.count, "error") %> prohibited this vital from being saved:</h2>
+
+        <ul>
+        <% @patient.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+    
+    
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+
+  <% end %>
+</div>
