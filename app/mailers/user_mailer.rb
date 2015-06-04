@@ -4,9 +4,9 @@ class UserMailer < ApplicationMailer
   def welcome_email(user)
     @user = user
     puts "@user = #{@user}"
-    @url = 'http://www.google.com'
+    @url = 'http://localhost:3000/'
     puts "@url = #{@url}"
     puts "@user.email = #{@user.email}"
-    mail(to: @user.email, subject: 'test welcome email')
+    mail(to: @user.email, subject: 'Welcome!')
   end
 end
